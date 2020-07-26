@@ -1,0 +1,26 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Wiki
+{% endblock %}
+
+{% block body %}
+    {% if results|length == 1 %}
+    <p style = "color:white; background-color: purple; text-align: center;">Showing {{ results|length }} matching result for "{{ query }}"</p>
+  
+    {% elif results|length > 1 %}
+    <p style = "color:white; background-color: purple; text-align: center;">Showing {{ results|length }} matching results for "{{ query }}"</p>
+
+    {% endif %}
+    <h1>Search Results</h1>
+    <ul class="no-bullet">
+        
+    <hr> 
+                
+        {% for result in results %}
+            <li><a href="{% url 'entry' result %}">{{ result }}</a></li>
+        {% empty %}
+            <li>No results</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

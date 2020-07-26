@@ -1,0 +1,14 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Wiki
+{% endblock %}
+
+{% block body %}
+    <p style="color:white; background-color: red; text-align: center;">Invalid URL</p>
+    <h1>"{{title}}" was not found </h1>
+    <p>
+        The URL requested is not valid because the page does not exist. </br>
+        Please, check the URL and try again.
+    </p>
+{% endblock %}
